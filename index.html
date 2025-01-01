@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"></script>
 </head>
 <body onload="brython()" bgcolor="black" text="white">
-    <h2>以下はテスト<br></h2>
     <div id="output"></div>
     <script type="text/python">
         from browser import document, timer  
@@ -22,7 +21,7 @@
                 except ValueError:
                     return False
             return False
-
+        output.write("<h2>以下はテスト<br></h2>")
         prime_list = []
         # 素数を判定する
         for i in range(1, 1000):
