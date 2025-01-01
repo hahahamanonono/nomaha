@@ -19,7 +19,7 @@
 
         # ビジターカウントを表示
         visitor_count = localStorage.getItem("visitorCount")
-        document["visitor-count"].text = f"このページに訪問した回数: {visitor_count} 回"
+        document["visitor-count"].text = f"Visitor counter: {visitor_count} "
         def is_integer_value(value):
             if isinstance(value, (int, float)):
                 return isinstance(value, int) or value.is_integer()
