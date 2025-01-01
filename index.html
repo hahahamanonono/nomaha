@@ -7,9 +7,19 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"></script>
 </head>
 <body onload="brython()" bgcolor="black" text="white">
+    <div id="visitor-count"></div>
     <div id="output"></div>
     <script type="text/python">
         from browser import document, timer  
+        
+        if localStorage.getItem("visitorCount") is None:
+            localStorage.setItem("visitorCount", 1)
+        else:
+            localStorage.setItem("visitorCount", int(localStorage.getItem("visitorCount")) + 1)
+
+        # ビジターカウントを表示
+        visitor_count = localStorage.getItem("visitorCount")
+        document["visitor-count"].text = f"このページに訪問した回数: {visitor_count} 回"
         def is_integer_value(value):
             if isinstance(value, (int, float)):
                 return isinstance(value, int) or value.is_integer()
